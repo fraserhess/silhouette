@@ -8,7 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4C4AB5491810C8B900B286AA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AB5481810C8B900B286AA /* Cocoa.framework */; };
-		4C4AB5531810C8B900B286AA /* Silhouette.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5521810C8B900B286AA /* Silhouette.m */; };
+		4C4AB55B1810C95500B286AA /* SilhouetteReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5591810C95500B286AA /* SilhouetteReporter.h */; };
+		4C4AB55C1810C95500B286AA /* SilhouetteReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55A1810C95500B286AA /* SilhouetteReporter.m */; };
+		4C4AB5661810C96E00B286AA /* SUSystemProfiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB55E1810C96E00B286AA /* SUSystemProfiler.h */; };
+		4C4AB5671810C96E00B286AA /* SUSystemProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55F1810C96E00B286AA /* SUSystemProfiler.m */; };
+		4C4AB5681810C96E00B286AA /* SUHost.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5601810C96E00B286AA /* SUHost.h */; };
+		4C4AB5691810C96E00B286AA /* SUHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5611810C96E00B286AA /* SUHost.m */; };
+		4C4AB56A1810C96E00B286AA /* SUConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5621810C96E00B286AA /* SUConstants.h */; };
+		4C4AB56B1810C96E00B286AA /* SUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5631810C96E00B286AA /* SUConstants.m */; };
+		4C4AB56C1810C96E00B286AA /* SULog.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5641810C96E00B286AA /* SULog.h */; };
+		4C4AB56D1810C96E00B286AA /* SULog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5651810C96E00B286AA /* SULog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,8 +27,16 @@
 		4C4AB54C1810C8B900B286AA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4C4AB54D1810C8B900B286AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C4AB5501810C8B900B286AA /* Silhouette-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Silhouette-Prefix.pch"; sourceTree = "<group>"; };
-		4C4AB5511810C8B900B286AA /* Silhouette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Silhouette.h; sourceTree = "<group>"; };
-		4C4AB5521810C8B900B286AA /* Silhouette.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Silhouette.m; sourceTree = "<group>"; };
+		4C4AB5591810C95500B286AA /* SilhouetteReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SilhouetteReporter.h; sourceTree = "<group>"; };
+		4C4AB55A1810C95500B286AA /* SilhouetteReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SilhouetteReporter.m; sourceTree = "<group>"; };
+		4C4AB55E1810C96E00B286AA /* SUSystemProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSystemProfiler.h; sourceTree = "<group>"; };
+		4C4AB55F1810C96E00B286AA /* SUSystemProfiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSystemProfiler.m; sourceTree = "<group>"; };
+		4C4AB5601810C96E00B286AA /* SUHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUHost.h; sourceTree = "<group>"; };
+		4C4AB5611810C96E00B286AA /* SUHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUHost.m; sourceTree = "<group>"; };
+		4C4AB5621810C96E00B286AA /* SUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUConstants.h; sourceTree = "<group>"; };
+		4C4AB5631810C96E00B286AA /* SUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUConstants.m; sourceTree = "<group>"; };
+		4C4AB5641810C96E00B286AA /* SULog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULog.h; sourceTree = "<group>"; };
+		4C4AB5651810C96E00B286AA /* SULog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +90,9 @@
 		4C4AB54E1810C8B900B286AA /* Silhouette */ = {
 			isa = PBXGroup;
 			children = (
-				4C4AB5511810C8B900B286AA /* Silhouette.h */,
-				4C4AB5521810C8B900B286AA /* Silhouette.m */,
+				4C4AB5591810C95500B286AA /* SilhouetteReporter.h */,
+				4C4AB55A1810C95500B286AA /* SilhouetteReporter.m */,
+				4C4AB55D1810C95D00B286AA /* Sparkle */,
 				4C4AB54F1810C8B900B286AA /* Supporting Files */,
 			);
 			path = Silhouette;
@@ -88,6 +106,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4C4AB55D1810C95D00B286AA /* Sparkle */ = {
+			isa = PBXGroup;
+			children = (
+				4C4AB55E1810C96E00B286AA /* SUSystemProfiler.h */,
+				4C4AB55F1810C96E00B286AA /* SUSystemProfiler.m */,
+				4C4AB5601810C96E00B286AA /* SUHost.h */,
+				4C4AB5611810C96E00B286AA /* SUHost.m */,
+				4C4AB5621810C96E00B286AA /* SUConstants.h */,
+				4C4AB5631810C96E00B286AA /* SUConstants.m */,
+				4C4AB5641810C96E00B286AA /* SULog.h */,
+				4C4AB5651810C96E00B286AA /* SULog.m */,
+			);
+			name = Sparkle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -95,6 +128,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C4AB55B1810C95500B286AA /* SilhouetteReporter.h in Headers */,
+				4C4AB5661810C96E00B286AA /* SUSystemProfiler.h in Headers */,
+				4C4AB5681810C96E00B286AA /* SUHost.h in Headers */,
+				4C4AB56A1810C96E00B286AA /* SUConstants.h in Headers */,
+				4C4AB56C1810C96E00B286AA /* SULog.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4AB5531810C8B900B286AA /* Silhouette.m in Sources */,
+				4C4AB55C1810C95500B286AA /* SilhouetteReporter.m in Sources */,
+				4C4AB5671810C96E00B286AA /* SUSystemProfiler.m in Sources */,
+				4C4AB5691810C96E00B286AA /* SUHost.m in Sources */,
+				4C4AB56B1810C96E00B286AA /* SUConstants.m in Sources */,
+				4C4AB56D1810C96E00B286AA /* SULog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
