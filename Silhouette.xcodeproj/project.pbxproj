@@ -1,0 +1,261 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C4AB5491810C8B900B286AA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AB5481810C8B900B286AA /* Cocoa.framework */; };
+		4C4AB5531810C8B900B286AA /* Silhouette.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5521810C8B900B286AA /* Silhouette.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C4AB5451810C8B900B286AA /* Silhouette.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Silhouette.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C4AB5481810C8B900B286AA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4C4AB54B1810C8B900B286AA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4C4AB54C1810C8B900B286AA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4C4AB54D1810C8B900B286AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C4AB5501810C8B900B286AA /* Silhouette-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Silhouette-Prefix.pch"; sourceTree = "<group>"; };
+		4C4AB5511810C8B900B286AA /* Silhouette.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Silhouette.h; sourceTree = "<group>"; };
+		4C4AB5521810C8B900B286AA /* Silhouette.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Silhouette.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C4AB5421810C8B900B286AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4AB5491810C8B900B286AA /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C4AB53C1810C8B900B286AA = {
+			isa = PBXGroup;
+			children = (
+				4C4AB54E1810C8B900B286AA /* Silhouette */,
+				4C4AB5471810C8B900B286AA /* Frameworks */,
+				4C4AB5461810C8B900B286AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C4AB5461810C8B900B286AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C4AB5451810C8B900B286AA /* Silhouette.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C4AB5471810C8B900B286AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C4AB5481810C8B900B286AA /* Cocoa.framework */,
+				4C4AB54A1810C8B900B286AA /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C4AB54A1810C8B900B286AA /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C4AB54B1810C8B900B286AA /* AppKit.framework */,
+				4C4AB54C1810C8B900B286AA /* CoreData.framework */,
+				4C4AB54D1810C8B900B286AA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4C4AB54E1810C8B900B286AA /* Silhouette */ = {
+			isa = PBXGroup;
+			children = (
+				4C4AB5511810C8B900B286AA /* Silhouette.h */,
+				4C4AB5521810C8B900B286AA /* Silhouette.m */,
+				4C4AB54F1810C8B900B286AA /* Supporting Files */,
+			);
+			path = Silhouette;
+			sourceTree = "<group>";
+		};
+		4C4AB54F1810C8B900B286AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C4AB5501810C8B900B286AA /* Silhouette-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4C4AB5431810C8B900B286AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4C4AB5441810C8B900B286AA /* Silhouette */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C4AB5561810C8B900B286AA /* Build configuration list for PBXNativeTarget "Silhouette" */;
+			buildPhases = (
+				4C4AB5411810C8B900B286AA /* Sources */,
+				4C4AB5421810C8B900B286AA /* Frameworks */,
+				4C4AB5431810C8B900B286AA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Silhouette;
+			productName = Silhouette;
+			productReference = 4C4AB5451810C8B900B286AA /* Silhouette.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C4AB53D1810C8B900B286AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Glencode LLC";
+			};
+			buildConfigurationList = 4C4AB5401810C8B900B286AA /* Build configuration list for PBXProject "Silhouette" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C4AB53C1810C8B900B286AA;
+			productRefGroup = 4C4AB5461810C8B900B286AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C4AB5441810C8B900B286AA /* Silhouette */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C4AB5411810C8B900B286AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4AB5531810C8B900B286AA /* Silhouette.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4C4AB5541810C8B900B286AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4C4AB5551810C8B900B286AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4C4AB5571810C8B900B286AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Silhouette/Silhouette-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C4AB5581810C8B900B286AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Silhouette/Silhouette-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C4AB5401810C8B900B286AA /* Build configuration list for PBXProject "Silhouette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C4AB5541810C8B900B286AA /* Debug */,
+				4C4AB5551810C8B900B286AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C4AB5561810C8B900B286AA /* Build configuration list for PBXNativeTarget "Silhouette" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C4AB5571810C8B900B286AA /* Debug */,
+				4C4AB5581810C8B900B286AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C4AB53D1810C8B900B286AA /* Project object */;
+}
