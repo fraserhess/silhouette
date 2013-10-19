@@ -66,6 +66,13 @@
 }
 
 - (void)submitProfile {
+	if ([delegate respondsToSelector:@selector(reporterMaySendProfile:)]
+		&& ![delegate reporterMaySendProfile:self]) {
+		[checkTimer invalidate];
+		[checkTimer release], checkTimer = nil;
+		checkTimer = [[NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(scheduleNextProfileSubmission) userInfo:nil repeats:NO] retain];
+		return;
+	}
 	NSURL *url = [self parameterizedFeedURL];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
 	NSOperationQueue *queue = [[NSOperationQueue alloc] init];
