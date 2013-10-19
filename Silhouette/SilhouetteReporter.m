@@ -13,11 +13,11 @@
 
 + (SilhouetteReporter *)sharedReporter {
 	static SilhouetteReporter *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[SilhouetteReporter alloc] init];
-    });
-    return sharedInstance;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		sharedInstance = [[SilhouetteReporter alloc] init];
+	});
+	return sharedInstance;
 }
 
 - (id)init {
@@ -32,19 +32,23 @@
 
 - (void)dealloc {
 	[host release];
-	if (checkTimer) { [checkTimer invalidate]; [checkTimer release]; checkTimer = nil; }		// UK 2009-03-16 Timer is non-repeating, may have invalidated itself, so we had to retain it.
+	if (checkTimer) {
+		[checkTimer invalidate];
+		[checkTimer release];
+		checkTimer = nil;
+	}
+	// UK 2009-03-16 Timer is non-repeating, may have invalidated itself, so we had to retain it.
 	[super dealloc];
 }
 
-- (void)scheduleNextProfileSubmission
-{
-	if (checkTimer)
-	{
+- (void)scheduleNextProfileSubmission {
+	if (checkTimer) {
 		[checkTimer invalidate];
-		[checkTimer release];		// UK 2009-03-16 Timer is non-repeating, may have invalidated itself, so we had to retain it.
+		[checkTimer release];
 		checkTimer = nil;
 	}
-	
+	// UK 2009-03-16 Timer is non-repeating, may have invalidated itself, so we had to retain it.
+
 	if (![self sendsSystemProfile]) {
 		// If the user prefer we don't send a profile, schedule to check in 5 minutes if they changed the preference
 		checkTimer = [[NSTimer scheduledTimerWithTimeInterval:SIL_DELAY target:self selector:@selector(scheduleNextProfileSubmission) userInfo:nil repeats:NO] retain];
@@ -53,21 +57,25 @@
 
 	// How long has it been since last we checked for an update?
 	NSDate *lastCheckDate = [self lastUpdateCheckDate];
-	if (!lastCheckDate) { lastCheckDate = [NSDate distantPast]; }
+	if (!lastCheckDate) {
+		lastCheckDate = [NSDate distantPast];
+	}
 	NSTimeInterval intervalSinceCheck = [[NSDate date] timeIntervalSinceDate:lastCheckDate];
-	
+
 	// Now we want to figure out how long until we check again.
 	NSTimeInterval delayUntilCheck, updateCheckInterval = [self updateCheckInterval];
-	if (intervalSinceCheck < updateCheckInterval)
+	if (intervalSinceCheck < updateCheckInterval) {
 		delayUntilCheck = (updateCheckInterval - intervalSinceCheck); // It hasn't been long enough.
-	else
+	} else {
 		delayUntilCheck = 0; // We're overdue! Run one now.
-	checkTimer = [[NSTimer scheduledTimerWithTimeInterval:delayUntilCheck target:self selector:@selector(submitProfile) userInfo:nil repeats:NO] retain];		// UK 2009-03-16 Timer is non-repeating, may have invalidated itself, so we had to retain it.
+	}
+	checkTimer = [[NSTimer scheduledTimerWithTimeInterval:delayUntilCheck target:self selector:@selector(submitProfile) userInfo:nil repeats:NO] retain];
+	// UK 2009-03-16 Timer is non-repeating, may have invalidated itself, so we had to retain it.
 }
 
 - (void)submitProfile {
 	if ([delegate respondsToSelector:@selector(reporterMaySendProfile:)]
-		&& ![delegate reporterMaySendProfile:self]) {
+	    && ![delegate reporterMaySendProfile:self]) {
 		[checkTimer invalidate];
 		[checkTimer release], checkTimer = nil;
 		checkTimer = [[NSTimer scheduledTimerWithTimeInterval:SIL_DELAY target:self selector:@selector(scheduleNextProfileSubmission) userInfo:nil repeats:NO] retain];
@@ -99,71 +107,74 @@
 {
 	// A value in the user defaults overrides one in the Info.plist (so preferences panels can be created wherein users choose between beta / release feeds).
 	NSString *appcastString = [host objectForKey:SUFeedURLKey];
-	if( [delegate respondsToSelector: @selector(feedURLStringForReporter:)] )
-		appcastString = [delegate feedURLStringForReporter: self];
-	if (!appcastString) // Can't find an appcast string!
+	if ([delegate respondsToSelector:@selector(feedURLStringForReporter:)]) {
+		appcastString = [delegate feedURLStringForReporter:self];
+	}
+	if (!appcastString) {
+		// Can't find an appcast string!
 		[NSException raise:@"SUNoFeedURL" format:@"You must specify the URL of the appcast as the SUFeedURL key in either the Info.plist or the user defaults!"];
-	NSCharacterSet* quoteSet = [NSCharacterSet characterSetWithCharactersInString: @"\"\'"]; // Some feed publishers add quotes; strip 'em.
-	NSString*	castUrlStr = [appcastString stringByTrimmingCharactersInSet:quoteSet];
-	if( !castUrlStr || [castUrlStr length] == 0 )
+	}
+	NSCharacterSet *quoteSet = [NSCharacterSet characterSetWithCharactersInString:@"\"\'"];  // Some feed publishers add quotes; strip 'em.
+	NSString *castUrlStr = [appcastString stringByTrimmingCharactersInSet:quoteSet];
+	if (!castUrlStr || [castUrlStr length] == 0) {
 		return nil;
-	else
-		return [NSURL URLWithString: castUrlStr];
+	} else {
+		return [NSURL URLWithString:castUrlStr];
+	}
 }
 
-- (NSURL *)parameterizedFeedURL
-{
+- (NSURL *)parameterizedFeedURL {
 	NSURL *baseFeedURL = [self feedURL];
-	
+
 	// Determine all the parameters we're attaching to the base feed URL.
 	BOOL sendingSystemProfile = [self sendsSystemProfile];
-	
-	
+
 	NSArray *parameters = [NSArray array];
-	if ([delegate respondsToSelector:@selector(feedParametersForReporter:sendingSystemProfile:)])
+	if ([delegate respondsToSelector:@selector(feedParametersForReporter:sendingSystemProfile:)]) {
 		parameters = [parameters arrayByAddingObjectsFromArray:[delegate feedParametersForReporter:self sendingSystemProfile:sendingSystemProfile]];
-	if (sendingSystemProfile)
-	{
+	}
+	if (sendingSystemProfile) {
 		parameters = [parameters arrayByAddingObjectsFromArray:[host systemProfile]];
 	}
-	if ([parameters count] == 0) { return baseFeedURL; }
-	
+	if ([parameters count] == 0) {
+		return baseFeedURL;
+	}
+
 	// Build up the parameterized URL.
 	NSMutableArray *parameterStrings = [NSMutableArray array];
 	NSEnumerator *profileInfoEnumerator = [parameters objectEnumerator];
 	NSDictionary *currentProfileInfo;
-	while ((currentProfileInfo = [profileInfoEnumerator nextObject]))
+	while ( (currentProfileInfo = [profileInfoEnumerator nextObject]) )
 		[parameterStrings addObject:[NSString stringWithFormat:@"%@=%@", [[[currentProfileInfo objectForKey:@"key"] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[[currentProfileInfo objectForKey:@"value"] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-	
+
 	NSString *separatorCharacter = @"?";
-	if ([baseFeedURL query])
+	if ([baseFeedURL query]) {
 		separatorCharacter = @"&"; // In case the URL is already http://foo.org/baz.xml?bat=4
+	}
 	NSString *appcastStringWithProfile = [NSString stringWithFormat:@"%@%@%@", [baseFeedURL absoluteString], separatorCharacter, [parameterStrings componentsJoinedByString:@"&"]];
-	
+
 	// Clean it up so it's a valid URL
 	return [NSURL URLWithString:appcastStringWithProfile];
 }
 
-- (NSTimeInterval)updateCheckInterval
-{
+- (NSTimeInterval)updateCheckInterval {
 	return 60 * 60 * 24 * 7;
 }
 
-- (NSDate *)lastUpdateCheckDate
-{
+- (NSDate *)lastUpdateCheckDate {
 	return [host objectForUserDefaultsKey:SULastProfileSubmitDateKey];
 }
 
-- (BOOL)sendsSystemProfile
-{
+- (BOOL)sendsSystemProfile {
 	return [host boolForUserDefaultsKey:SUSendProfileInfoKey];
 }
 
-- (void)setDelegate:aDelegate
-{
+- (void)setDelegate:aDelegate {
 	delegate = aDelegate;
 }
 
-- (id)delegate { return delegate; }
+- (id)delegate {
+	return delegate;
+}
 
 @end
