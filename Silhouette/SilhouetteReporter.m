@@ -65,10 +65,6 @@
 	checkTimer = [[NSTimer scheduledTimerWithTimeInterval:delayUntilCheck target:self selector:@selector(submitProfile) userInfo:nil repeats:NO] retain];		// UK 2009-03-16 Timer is non-repeating, may have invalidated itself, so we had to retain it.
 }
 
-- (void)waitToSubmitAgain {
-	[self performSelectorOnMainThread:@selector(scheduleNextProfileSubmission) withObject:nil waitUntilDone:NO];
-}
-
 - (void)submitProfile {
 	NSURL *url = [self parameterizedFeedURL];
 	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
