@@ -45,6 +45,12 @@
 		checkTimer = nil;
 	}
 	
+	if (![self sendsSystemProfile]) {
+		// If the user prefer we don't send a profile, schedule to check in 5 minutes if they changed the preference
+		checkTimer = [[NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(scheduleNextProfileSubmission) userInfo:nil repeats:NO] retain];
+		return;
+	}
+
 	// How long has it been since last we checked for an update?
 	NSDate *lastCheckDate = [self lastUpdateCheckDate];
 	if (!lastCheckDate) { lastCheckDate = [NSDate distantPast]; }
