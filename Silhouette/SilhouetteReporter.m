@@ -47,7 +47,7 @@
 	
 	if (![self sendsSystemProfile]) {
 		// If the user prefer we don't send a profile, schedule to check in 5 minutes if they changed the preference
-		checkTimer = [[NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(scheduleNextProfileSubmission) userInfo:nil repeats:NO] retain];
+		checkTimer = [[NSTimer scheduledTimerWithTimeInterval:SIL_DELAY target:self selector:@selector(scheduleNextProfileSubmission) userInfo:nil repeats:NO] retain];
 		return;
 	}
 
@@ -70,7 +70,7 @@
 		&& ![delegate reporterMaySendProfile:self]) {
 		[checkTimer invalidate];
 		[checkTimer release], checkTimer = nil;
-		checkTimer = [[NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(scheduleNextProfileSubmission) userInfo:nil repeats:NO] retain];
+		checkTimer = [[NSTimer scheduledTimerWithTimeInterval:SIL_DELAY target:self selector:@selector(scheduleNextProfileSubmission) userInfo:nil repeats:NO] retain];
 		return;
 	}
 	NSURL *url = [self parameterizedFeedURL];
@@ -89,7 +89,7 @@
 				 (!data && error)) {
 			// Something went wrong so try again in 5 minutes
 			dispatch_async(dispatch_get_main_queue(), ^{
-				[self performSelector:@selector(scheduleNextProfileSubmission) withObject:nil afterDelay:300];
+				[self performSelector:@selector(scheduleNextProfileSubmission) withObject:nil afterDelay:SIL_DELAY];
 			});
 		}
 	}];
