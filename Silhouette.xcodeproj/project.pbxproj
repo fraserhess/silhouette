@@ -7,21 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C4AB5491810C8B900B286AA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AB5481810C8B900B286AA /* Cocoa.framework */; };
-		4C4AB55B1810C95500B286AA /* SilhouetteReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5591810C95500B286AA /* SilhouetteReporter.h */; };
-		4C4AB55C1810C95500B286AA /* SilhouetteReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55A1810C95500B286AA /* SilhouetteReporter.m */; };
-		4C4AB5661810C96E00B286AA /* SUSystemProfiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB55E1810C96E00B286AA /* SUSystemProfiler.h */; };
-		4C4AB5671810C96E00B286AA /* SUSystemProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55F1810C96E00B286AA /* SUSystemProfiler.m */; };
-		4C4AB5681810C96E00B286AA /* SUHost.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5601810C96E00B286AA /* SUHost.h */; };
-		4C4AB5691810C96E00B286AA /* SUHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5611810C96E00B286AA /* SUHost.m */; };
-		4C4AB56A1810C96E00B286AA /* SUConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5621810C96E00B286AA /* SUConstants.h */; };
-		4C4AB56B1810C96E00B286AA /* SUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5631810C96E00B286AA /* SUConstants.m */; };
-		4C4AB56C1810C96E00B286AA /* SULog.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5641810C96E00B286AA /* SULog.h */; };
-		4C4AB56D1810C96E00B286AA /* SULog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5651810C96E00B286AA /* SULog.m */; };
+		4C4AB5A4181227EE00B286AA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AB5481810C8B900B286AA /* Cocoa.framework */; };
+		4C4AB5AA181227EE00B286AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C4AB5A8181227EE00B286AA /* InfoPlist.strings */; };
+		4C4AB5B21812289600B286AA /* SilhouetteReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55A1810C95500B286AA /* SilhouetteReporter.m */; };
+		4C4AB5B3181228A400B286AA /* SUSystemProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55F1810C96E00B286AA /* SUSystemProfiler.m */; };
+		4C4AB5B4181228A700B286AA /* SUHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5611810C96E00B286AA /* SUHost.m */; };
+		4C4AB5B5181228AD00B286AA /* SUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5631810C96E00B286AA /* SUConstants.m */; };
+		4C4AB5B6181228B100B286AA /* SULog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5651810C96E00B286AA /* SULog.m */; };
+		4C4AB5B7181228BB00B286AA /* SilhouetteReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5591810C95500B286AA /* SilhouetteReporter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C4AB5B8181228C200B286AA /* SUConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5621810C96E00B286AA /* SUConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C4AB5451810C8B900B286AA /* Silhouette.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Silhouette.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4AB5481810C8B900B286AA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4C4AB54B1810C8B900B286AA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4C4AB54C1810C8B900B286AA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -37,14 +34,17 @@
 		4C4AB5631810C96E00B286AA /* SUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUConstants.m; sourceTree = "<group>"; };
 		4C4AB5641810C96E00B286AA /* SULog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SULog.h; sourceTree = "<group>"; };
 		4C4AB5651810C96E00B286AA /* SULog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SULog.m; sourceTree = "<group>"; };
+		4C4AB5A3181227EE00B286AA /* Silhouette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Silhouette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C4AB5A7181227EE00B286AA /* Silhouette-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Silhouette-Info.plist"; sourceTree = "<group>"; };
+		4C4AB5A9181227EE00B286AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4C4AB5421810C8B900B286AA /* Frameworks */ = {
+		4C4AB59F181227EE00B286AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4AB5491810C8B900B286AA /* Cocoa.framework in Frameworks */,
+				4C4AB5A4181227EE00B286AA /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 		4C4AB5461810C8B900B286AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C4AB5451810C8B900B286AA /* Silhouette.dylib */,
+				4C4AB5A3181227EE00B286AA /* Silhouette.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				4C4AB5501810C8B900B286AA /* Silhouette-Prefix.pch */,
+				4C4AB5A7181227EE00B286AA /* Silhouette-Info.plist */,
+				4C4AB5A8181227EE00B286AA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -124,28 +126,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4C4AB5431810C8B900B286AA /* Headers */ = {
+		4C4AB5A0181227EE00B286AA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4AB55B1810C95500B286AA /* SilhouetteReporter.h in Headers */,
-				4C4AB5661810C96E00B286AA /* SUSystemProfiler.h in Headers */,
-				4C4AB5681810C96E00B286AA /* SUHost.h in Headers */,
-				4C4AB56A1810C96E00B286AA /* SUConstants.h in Headers */,
-				4C4AB56C1810C96E00B286AA /* SULog.h in Headers */,
+				4C4AB5B7181228BB00B286AA /* SilhouetteReporter.h in Headers */,
+				4C4AB5B8181228C200B286AA /* SUConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4C4AB5441810C8B900B286AA /* Silhouette */ = {
+		4C4AB5A2181227EE00B286AA /* Silhouette */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C4AB5561810C8B900B286AA /* Build configuration list for PBXNativeTarget "Silhouette" */;
+			buildConfigurationList = 4C4AB5AF181227EE00B286AA /* Build configuration list for PBXNativeTarget "Silhouette" */;
 			buildPhases = (
-				4C4AB5411810C8B900B286AA /* Sources */,
-				4C4AB5421810C8B900B286AA /* Frameworks */,
-				4C4AB5431810C8B900B286AA /* Headers */,
+				4C4AB59E181227EE00B286AA /* Sources */,
+				4C4AB59F181227EE00B286AA /* Frameworks */,
+				4C4AB5A0181227EE00B286AA /* Headers */,
+				4C4AB5A1181227EE00B286AA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -153,8 +153,8 @@
 			);
 			name = Silhouette;
 			productName = Silhouette;
-			productReference = 4C4AB5451810C8B900B286AA /* Silhouette.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
+			productReference = 4C4AB5A3181227EE00B286AA /* Silhouette.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -177,25 +177,47 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C4AB5441810C8B900B286AA /* Silhouette */,
+				4C4AB5A2181227EE00B286AA /* Silhouette */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		4C4AB5A1181227EE00B286AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4AB5AA181227EE00B286AA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		4C4AB5411810C8B900B286AA /* Sources */ = {
+		4C4AB59E181227EE00B286AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C4AB55C1810C95500B286AA /* SilhouetteReporter.m in Sources */,
-				4C4AB5671810C96E00B286AA /* SUSystemProfiler.m in Sources */,
-				4C4AB5691810C96E00B286AA /* SUHost.m in Sources */,
-				4C4AB56B1810C96E00B286AA /* SUConstants.m in Sources */,
-				4C4AB56D1810C96E00B286AA /* SULog.m in Sources */,
+				4C4AB5B21812289600B286AA /* SilhouetteReporter.m in Sources */,
+				4C4AB5B3181228A400B286AA /* SUSystemProfiler.m in Sources */,
+				4C4AB5B4181228A700B286AA /* SUHost.m in Sources */,
+				4C4AB5B5181228AD00B286AA /* SUConstants.m in Sources */,
+				4C4AB5B6181228B100B286AA /* SULog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C4AB5A8181227EE00B286AA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C4AB5A9181227EE00B286AA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4C4AB5541810C8B900B286AA /* Debug */ = {
@@ -255,25 +277,33 @@
 			};
 			name = Release;
 		};
-		4C4AB5571810C8B900B286AA /* Debug */ = {
+		4C4AB5B0181227EE00B286AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Silhouette/Silhouette-Prefix.pch";
+				INFOPLIST_FILE = "Silhouette/Silhouette-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
 		};
-		4C4AB5581810C8B900B286AA /* Release */ = {
+		4C4AB5B1181227EE00B286AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Silhouette/Silhouette-Prefix.pch";
+				INFOPLIST_FILE = "Silhouette/Silhouette-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
 		};
@@ -289,11 +319,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C4AB5561810C8B900B286AA /* Build configuration list for PBXNativeTarget "Silhouette" */ = {
+		4C4AB5AF181227EE00B286AA /* Build configuration list for PBXNativeTarget "Silhouette" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4C4AB5571810C8B900B286AA /* Debug */,
-				4C4AB5581810C8B900B286AA /* Release */,
+				4C4AB5B0181227EE00B286AA /* Debug */,
+				4C4AB5B1181227EE00B286AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
