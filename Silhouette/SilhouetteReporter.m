@@ -72,6 +72,7 @@
 	[NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
 	{
 		if ([data length] > 0 && !error) {
+			// We have success so update the submission date and schedule the next submission
 			dispatch_async(dispatch_get_main_queue(), ^{
 				[host setObject:[NSDate date] forUserDefaultsKey:SULastProfileSubmitDateKey];
 				[self performSelector:@selector(scheduleNextProfileSubmission) withObject:nil afterDelay:0];
@@ -79,8 +80,9 @@
 		}
 		if (([data length] == 0 && !error) ||
 				 (!data && error)) {
+			// Something went wrong so try again in 5 minutes
 			dispatch_async(dispatch_get_main_queue(), ^{
-				[self performSelector:@selector(scheduleNextProfileSubmission) withObject:nil afterDelay:60];
+				[self performSelector:@selector(scheduleNextProfileSubmission) withObject:nil afterDelay:300];
 			});
 		}
 	}];
