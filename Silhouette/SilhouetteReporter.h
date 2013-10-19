@@ -20,3 +20,13 @@
 - (id)delegate;
 
 @end
+
+@interface NSObject (SilhouetteReporterDelegateInformalProtocol)
+
+- (BOOL)reporterMaySendProfile:(SilhouetteReporter *)reporter;
+
+- (NSString *)feedURLStringForReporter:(SilhouetteReporter *)reporter;
+
+- (NSArray *)feedParametersForReporter:(SilhouetteReporter *)reporter sendingSystemProfile:(BOOL)sendingProfile;
+
+@end
