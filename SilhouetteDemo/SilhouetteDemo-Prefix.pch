@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'SilhouetteDemo' target in the 'SilhouetteDemo' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif
