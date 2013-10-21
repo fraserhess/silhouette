@@ -35,7 +35,7 @@
 	NSMutableArray *profileArray = [NSMutableArray array];
 	NSArray *profileDictKeys = [NSArray arrayWithObjects:@"key", @"displayKey", @"value", @"displayValue", nil];
 	int error = 0;
-	int value = 0;
+	uint64_t value = 0;
 	size_t length = sizeof(value);
 	
 	// OS version
@@ -45,7 +45,7 @@
 	
 	// CPU type (decoder info for values found here is in mach/machine.h)
 	error = sysctlbyname("hw.cputype", &value, &length, NULL, 0);
-	int cpuType = -1;
+	uint64_t cpuType = -1;
 	if (error == 0) {
 		cpuType = value;
 		NSString *visibleCPUType;
@@ -54,7 +54,7 @@
 			case CPU_TYPE_POWERPC:	visibleCPUType = @"PowerPC";	break;
 			default:				visibleCPUType = @"Unknown";	break;
 		}
-		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cputype",@"CPU Type", [NSNumber numberWithInt:value], visibleCPUType,nil] forKeys:profileDictKeys]];
+		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cputype",@"CPU Type", [NSNumber numberWithUnsignedInteger:value], visibleCPUType,nil] forKeys:profileDictKeys]];
 	}
 	error = sysctlbyname("hw.cpu64bit_capable", &value, &length, NULL, 0);
 	if(error != 0)
@@ -85,7 +85,7 @@
 		} else {
 			visibleCPUSubType = @"Other";
 		}
-		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cpusubtype",@"CPU Subtype", [NSNumber numberWithInt:value], visibleCPUSubType,nil] forKeys:profileDictKeys]];
+		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cpusubtype",@"CPU Subtype", [NSNumber numberWithUnsignedInteger:value], visibleCPUSubType,nil] forKeys:profileDictKeys]];
 	}
 	error = sysctlbyname("hw.model", NULL, &length, NULL, 0);
 	if (error == 0) {
@@ -106,7 +106,7 @@
 	// Number of CPUs
 	error = sysctlbyname("hw.ncpu", &value, &length, NULL, 0);
 	if (error == 0)
-		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"ncpu",@"Number of CPUs", [NSNumber numberWithInt:value], [NSNumber numberWithInt:value],nil] forKeys:profileDictKeys]];
+		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"ncpu",@"Number of CPUs", [NSNumber numberWithUnsignedInteger:value], [NSNumber numberWithUnsignedInteger:value],nil] forKeys:profileDictKeys]];
 	
 	// User preferred language
 	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
@@ -123,16 +123,24 @@
 		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"appVersion",@"Application Version", appVersion, appVersion,nil] forKeys:profileDictKeys]];
 	
 	// Number of displays?
+    
 	// CPU speed
-	SInt32 gestaltInfo;
-	OSErr err = Gestalt(gestaltProcClkSpeedMHz,&gestaltInfo);
-	if (err == noErr)
-		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cpuFreqMHz",@"CPU Speed (GHz)", [NSNumber numberWithInt:gestaltInfo], [NSNumber numberWithDouble:gestaltInfo/1000.0],nil] forKeys:profileDictKeys]];
-	
+    length = sizeof(value);
+    error = sysctlbyname("hw.cpufrequency", &value, &length, NULL, 0);
+    if (error == 0) {
+        // Example 2.93GHz is returned as 2930000000
+        NSUInteger cpuFreqMHz = value / 1E+6;
+		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cpuFreqMHz",@"CPU Speed (GHz)", [NSNumber numberWithUnsignedInteger:cpuFreqMHz], [NSNumber numberWithDouble:cpuFreqMHz/1000.0],nil] forKeys:profileDictKeys]];
+    }
+    
 	// amount of RAM
-	err = Gestalt(gestaltPhysicalRAMSizeInMegabytes,&gestaltInfo);
-	if (err == noErr)
-		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"ramMB",@"Memory (MB)", [NSNumber numberWithInt:gestaltInfo], [NSNumber numberWithInt:gestaltInfo],nil] forKeys:profileDictKeys]];
+    length = sizeof(value);
+    error = sysctlbyname("hw.memsize", &value, &length, NULL, 0);
+    if (error == 0) {
+        // Example: 24GB is returned as 25769803776
+        NSUInteger memSizeMB = value / (1024*1024);
+		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"ramMB",@"Memory (MB)", [NSNumber numberWithUnsignedInteger:memSizeMB], [NSNumber numberWithUnsignedInteger:memSizeMB],nil] forKeys:profileDictKeys]];
+    }
 	
 	return profileArray;
 }
