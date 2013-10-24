@@ -51,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C31C0441818C53F0052FA84 /* SilhouetteDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SilhouetteDemo.entitlements; sourceTree = "<group>"; };
 		4C4AB5481810C8B900B286AA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4C4AB54B1810C8B900B286AA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4C4AB54C1810C8B900B286AA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -178,6 +179,7 @@
 		4C4AB5BF18122FC600B286AA /* SilhouetteDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4C31C0441818C53F0052FA84 /* SilhouetteDemo.entitlements */,
 				4C4AB5CB18122FC600B286AA /* AppDelegate.h */,
 				4C4AB5CC18122FC600B286AA /* AppDelegate.m */,
 				4C4AB5CE18122FC600B286AA /* MainMenu.xib */,
@@ -462,11 +464,14 @@
 		4C4AB5D218122FC600B286AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SilhouetteDemo/SilhouetteDemo.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SilhouetteDemo/SilhouetteDemo-Prefix.pch";
 				INFOPLIST_FILE = "SilhouetteDemo/SilhouetteDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -474,11 +479,14 @@
 		4C4AB5D318122FC600B286AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SilhouetteDemo/SilhouetteDemo.entitlements;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SilhouetteDemo/SilhouetteDemo-Prefix.pch";
 				INFOPLIST_FILE = "SilhouetteDemo/SilhouetteDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
