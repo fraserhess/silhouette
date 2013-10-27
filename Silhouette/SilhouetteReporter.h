@@ -25,9 +25,9 @@
 
 - (BOOL)reporterMaySendProfile:(SilhouetteReporter *)reporter;
 
-- (NSString *)feedURLStringForReporter:(SilhouetteReporter *)reporter;
+- (NSString *)URLStringForReporter:(SilhouetteReporter *)reporter;
 
-- (NSArray *)feedParametersForReporter:(SilhouetteReporter *)reporter sendingSystemProfile:(BOOL)sendingProfile;
+- (NSArray *)extraParametersForReporter:(SilhouetteReporter *)reporter sendingSystemProfile:(BOOL)sendingProfile;
 
 @end
 

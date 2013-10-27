@@ -107,8 +107,8 @@
 {
 	// A value in the user defaults overrides one in the Info.plist (so preferences panels can be created wherein users choose between beta / release feeds).
 	NSString *appcastString = [host objectForKey:SUFeedURLKey];
-	if ([delegate respondsToSelector:@selector(feedURLStringForReporter:)]) {
-		appcastString = [delegate feedURLStringForReporter:self];
+	if ([delegate respondsToSelector:@selector(URLStringForReporter:)]) {
+		appcastString = [delegate URLStringForReporter:self];
 	}
 	if (!appcastString) {
 		// Can't find an appcast string!
@@ -130,8 +130,8 @@
 	BOOL sendingSystemProfile = [self sendsSystemProfile];
 
 	NSArray *parameters = [NSArray array];
-	if ([delegate respondsToSelector:@selector(feedParametersForReporter:sendingSystemProfile:)]) {
-		parameters = [parameters arrayByAddingObjectsFromArray:[delegate feedParametersForReporter:self sendingSystemProfile:sendingSystemProfile]];
+	if ([delegate respondsToSelector:@selector(extraParametersForReporter:sendingSystemProfile:)]) {
+		parameters = [parameters arrayByAddingObjectsFromArray:[delegate extraParametersForReporter:self sendingSystemProfile:sendingSystemProfile]];
 	}
 	if (sendingSystemProfile) {
 		parameters = [parameters arrayByAddingObjectsFromArray:[host systemProfile]];
