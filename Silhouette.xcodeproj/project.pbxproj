@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C31C048181C1B2C0052FA84 /* SUHost.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5601810C96E00B286AA /* SUHost.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C4AB5A4181227EE00B286AA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AB5481810C8B900B286AA /* Cocoa.framework */; };
 		4C4AB5AA181227EE00B286AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C4AB5A8181227EE00B286AA /* InfoPlist.strings */; };
 		4C4AB5B21812289600B286AA /* SilhouetteReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55A1810C95500B286AA /* SilhouetteReporter.m */; };
@@ -209,6 +210,7 @@
 			files = (
 				4C4AB5B7181228BB00B286AA /* SilhouetteReporter.h in Headers */,
 				4C4AB5B8181228C200B286AA /* SUConstants.h in Headers */,
+				4C31C048181C1B2C0052FA84 /* SUHost.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
