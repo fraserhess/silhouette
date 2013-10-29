@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <Silhouette/SilhouetteReporter.h>
 #import <Silhouette/SUConstants.h>
 
 @implementation AppDelegate
@@ -26,7 +25,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	// Insert code here to initialize your application
-	SilhouetteReporter *reporter = [SilhouetteReporter sharedReporter];
+	_reporter = [SilhouetteReporter sharedReporter];
 }
 
 @end
