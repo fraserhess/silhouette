@@ -246,9 +246,21 @@
 + (NSString *)systemVersionString
 {
 	// This returns a version string of the form X.Y.Z
-	NSString* verStr = nil;
+	NSString *verStr = nil;
     NSString *versionPlistPath = @"/System/Library/CoreServices/SystemVersion.plist";
     verStr = [[NSDictionary dictionaryWithContentsOfFile:versionPlistPath] objectForKey:@"ProductVersion"];
+	// We may get less than 3 parts, "10.9" for example
+	NSArray *versionComponents = [verStr componentsSeparatedByString:@"."];
+	switch ([versionComponents count]) {
+		case 1:
+			verStr = [verStr stringByAppendingString:@".0.0"];
+			break;
+		case 2:
+			verStr = [verStr stringByAppendingString:@".0"];
+			break;
+		default:
+			break;
+	}
 	return verStr;
 }
 
