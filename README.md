@@ -26,7 +26,7 @@ The server side is the same as [Sparkle's System Profiling](https://github.com/a
     - In the app delegate's properties, ```@property SilhouetteReporter *reporter;```
     - In the ```applicationDidFinishLaunching:```, ```_reporter = [SilhouetteReporter sharedReporter];```
 1. Set the default _SUSendProfileInfo_ boolean preference
-1. Add the _SUFeedURL_ key to your Info.plist or implement the ```URLStringForReporter:``` delegate method
+1. Add the _SUFeedURL_ key to your Info.plist. Alternatively, set a delegate and implement the ```URLStringForReporter:``` delegate method
 1. Add **Allow Outgoing Network Connections** to your Sandbox Entitlements
 1. Optionally, implement the other delegate methods
 1. Make sure both MAS and non-MAS versions of your app still build and run successfully
