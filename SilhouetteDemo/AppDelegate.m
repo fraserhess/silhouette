@@ -19,6 +19,7 @@
 
 - (void)dealloc
 {
+	[_reporter release];
     [super dealloc];
 }
 

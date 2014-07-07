@@ -12,6 +12,6 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property SilhouetteReporter *reporter;
+@property (retain) SilhouetteReporter *reporter;
 
 @end
