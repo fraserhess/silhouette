@@ -31,6 +31,7 @@
 }
 
 - (void)dealloc {
+	[requestQueue release];
 	[host release];
 	if (checkTimer) {
 		[checkTimer invalidate];
@@ -82,9 +83,11 @@
 		return;
 	}
 	NSURL *url = [self parameterizedFeedURL];
-	NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-	NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-	[NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+	NSURLRequest *request = [[[NSURLRequest alloc] initWithURL:url] autorelease];
+	if (!requestQueue) {
+		requestQueue = [[NSOperationQueue alloc] init];
+	}
+	[NSURLConnection sendAsynchronousRequest:request queue:requestQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
 	{
 		if ([data length] > 0 && !error) {
 			// We have success so update the submission date and schedule the next submission

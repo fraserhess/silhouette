@@ -12,6 +12,7 @@
 @interface SilhouetteReporter : NSObject {
 	NSTimer *checkTimer;
 	SUHost *host;
+	NSOperationQueue *requestQueue;
 	IBOutlet id delegate;
 }
 
