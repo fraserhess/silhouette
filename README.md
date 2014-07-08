@@ -37,7 +37,7 @@ The server side is the same as [Sparkle's System Profiling](https://github.com/a
 - The webserver must return a non-zero length response to the profile submission
 - If the webserver returns the same appcast as it does to Sparkle, Silhouette will ignore the appcast as it doesn't perform software updates
 - If you default _SUSendProfileInfo_ to NO, you'll have to provide an interface, perhaps in Preferences, for the customer to opt-in to hardware profiling
-- Compiled with the OS X Mountain Lion SDK but should run on OS X Lion and later
+- Compiles with the OS X Mavericks SDK but should run on OS X Lion and later
 
 ### Delegate
 
