@@ -17,14 +17,12 @@
 	[defaults registerDefaults:defaultsDict];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
 	[_reporter release];
-    [super dealloc];
+	[super dealloc];
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application
 	_reporter = [SilhouetteReporter sharedReporter];
 }
