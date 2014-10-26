@@ -83,7 +83,9 @@
 		return;
 	}
 	NSURL *url = [self parameterizedFeedURL];
-	NSURLRequest *request = [[[NSURLRequest alloc] initWithURL:url] autorelease];
+	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] initWithURL:url] autorelease];
+	[request setValue:[self userAgentString] forHTTPHeaderField:@"User-Agent"];
+
 	if (!requestQueue) {
 		requestQueue = [[NSOperationQueue alloc] init];
 	}
@@ -124,6 +126,26 @@
 	} else {
 		return [NSURL URLWithString:castUrlStr];
 	}
+}
+
+- (void)setUserAgentString:(NSString *)userAgent
+{
+	if (customUserAgentString == userAgent)
+		return;
+	
+	[customUserAgentString release];
+	customUserAgentString = [userAgent copy];
+}
+
+- (NSString *)userAgentString
+{
+	if (customUserAgentString)
+		return customUserAgentString;
+	
+	NSString *version = [SILHOUETTE_BUNDLE objectForInfoDictionaryKey:@"CFBundleVersion"];
+	NSString *userAgent = [NSString stringWithFormat:@"%@/%@ Silhouette/%@", [host name], [host displayVersion], version ? version : @"?"];
+	NSData *cleanedAgent = [userAgent dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+	return [[[NSString alloc] initWithData:cleanedAgent encoding:NSASCIIStringEncoding] autorelease];
 }
 
 - (NSURL *)parameterizedFeedURL {

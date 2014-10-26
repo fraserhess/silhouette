@@ -12,14 +12,19 @@
 @interface SilhouetteReporter : NSObject {
 @private
 	NSTimer *checkTimer;
+	NSString *customUserAgentString;
 	SUHost *host;
 	NSOperationQueue *requestQueue;
 	IBOutlet id delegate;
 }
 
 + (SilhouetteReporter *)sharedReporter;
+
 - (void)setDelegate:(id)delegate;
 - (id)delegate;
+
+- (void)setUserAgentString:(NSString *)userAgent;
+- (NSString *)userAgentString;
 
 @end
 
