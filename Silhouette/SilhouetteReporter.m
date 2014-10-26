@@ -9,6 +9,8 @@
 #import "SilhouetteReporter.h"
 #import "SUConstants.h"
 
+#define SIL_DELAY 300
+
 @implementation SilhouetteReporter
 
 + (SilhouetteReporter *)sharedReporter {

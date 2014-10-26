@@ -37,5 +37,3 @@
 - (NSArray *)extraParametersForReporter:(SilhouetteReporter *)reporter sendingSystemProfile:(BOOL)sendingProfile;
 
 @end
-
-#define SIL_DELAY 300
