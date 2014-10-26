@@ -10,6 +10,7 @@
 #import "SUHost.h"
 
 @interface SilhouetteReporter : NSObject {
+@private
 	NSTimer *checkTimer;
 	SUHost *host;
 	NSOperationQueue *requestQueue;
