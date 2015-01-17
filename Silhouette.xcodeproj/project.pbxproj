@@ -386,7 +386,7 @@
 		4C4AB53D1810C8B900B286AA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Glencode LLC";
 				TargetAttributes = {
 					4C219B831A6A037600D46BD8 = {
