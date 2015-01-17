@@ -8,6 +8,9 @@
 
 #import "SilhouetteReporter.h"
 #import "SUConstants.h"
+#if TARGET_OS_IPHONE
+#import <UIKit/UIDevice.h>
+#endif
 
 #define SIL_DELAY 300
 
@@ -23,6 +26,15 @@
 }
 
 - (id)init {
+#if TARGET_OS_IPHONE
+	// Silhouette returns Mac hardware and OS X version when run in the iOS Simulator
+	// Therefore, Silhouette is disabled in the simulator
+	// Must detect the simulator at runtime, not compile time, as Silhouette is a library
+	if ([[[[UIDevice currentDevice] model] lowercaseString] containsString:@"simulator"]) {
+		NSLog(@"Silhouette does not operate in the iOS Simulator");
+		return nil;
+	}
+#endif
 	self = [super init];
 	if (!self) {
 		return nil;
