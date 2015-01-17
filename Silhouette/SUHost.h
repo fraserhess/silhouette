@@ -19,15 +19,9 @@
 - (id)initWithBundle:(NSBundle *)aBundle;
 - (NSBundle *)bundle;
 - (NSString *)bundlePath;
-- (NSString *)appSupportPath;
-- (NSString *)installationPath;
 - (NSString *)name;
 - (NSString *)version;
 - (NSString *)displayVersion;
-- (NSImage *)icon;
-- (BOOL)isRunningOnReadOnlyVolume;
-- (BOOL)isBackgroundApplication;
-- (NSString *)publicDSAKey;
 - (NSArray *)systemProfile;
 
 - (id)objectForInfoDictionaryKey:(NSString *)key;

@@ -41,7 +41,7 @@
 	[super dealloc];
 }
 
-- (NSString *)description { return [NSString stringWithFormat:@"%@ <%@, %@>", [self class], [self bundlePath], [self installationPath]]; }
+- (NSString *)description { return [NSString stringWithFormat:@"%@ <%@>", [self class], [self bundlePath]]; }
 
 - (NSBundle *)bundle
 {
@@ -51,32 +51,6 @@
 - (NSString *)bundlePath
 {
     return [bundle bundlePath];
-}
-
-- (NSString *)appSupportPath
-{
-    NSArray *appSupportPaths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-    NSString *appSupportPath = nil;
-    if (!appSupportPaths || [appSupportPaths count] == 0)
-    {
-        SULog(@"Failed to find app support directory! Using ~/Library/Application Support...");
-        appSupportPath = [@"~/Library/Application Support" stringByExpandingTildeInPath];
-    }
-    else
-        appSupportPath = [appSupportPaths objectAtIndex:0];
-    appSupportPath = [appSupportPath stringByAppendingPathComponent:[self name]];
-    return appSupportPath;
-}
-
-- (NSString *)installationPath
-{
-#if NORMALIZE_INSTALLED_APP_NAME
-    // We'll install to "#{CFBundleName}.app", but only if that path doesn't already exist. If we're "Foo 4.2.app," and there's a "Foo.app" in this directory, we don't want to overwrite it! But if there's no "Foo.app," we'll take that name.
-    NSString *normalizedAppPath = [[[bundle bundlePath] stringByDeletingLastPathComponent] stringByAppendingPathComponent: [NSString stringWithFormat: @"%@.%@", [bundle objectForInfoDictionaryKey:@"CFBundleName"], [[bundle bundlePath] pathExtension]]];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:[[[bundle bundlePath] stringByDeletingLastPathComponent] stringByAppendingPathComponent: [NSString stringWithFormat: @"%@.%@", [bundle objectForInfoDictionaryKey:@"CFBundleName"], [[bundle bundlePath] pathExtension]]]])
-        return normalizedAppPath;
-#endif
-	return [bundle bundlePath];
 }
 
 - (NSString *)name
@@ -105,64 +79,6 @@
 		return shortVersionString;
 	else
 		return [self version]; // Fall back on the normal version string.
-}
-
-- (NSImage *)icon
-{
-	// Cache the application icon.
-	NSString *iconPath = [bundle pathForResource:[bundle objectForInfoDictionaryKey:@"CFBundleIconFile"] ofType:@"icns"];
-	// According to the OS X docs, "CFBundleIconFile - This key identifies the file containing
-	// the icon for the bundle. The filename you specify does not need to include the .icns
-	// extension, although it may."
-	//
-	// However, if it *does* include the '.icns' the above method fails (tested on OS X 10.3.9) so we'll also try:
-	if (!iconPath)
-		iconPath = [bundle pathForResource:[bundle objectForInfoDictionaryKey:@"CFBundleIconFile"] ofType: nil];
-	NSImage *icon = [[[NSImage alloc] initWithContentsOfFile:iconPath] autorelease];
-	// Use a default icon if none is defined.
-	if (!icon) {
-		BOOL isMainBundle = (bundle == [NSBundle mainBundle]);
-		
-		// Starting with 10.6, iconForFileType: accepts a UTI.
-		NSString *fileType = nil;
-		if (floor(NSAppKitVersionNumber) <= NSAppKitVersionNumber10_5)
-			fileType = isMainBundle ? NSFileTypeForHFSTypeCode(kGenericApplicationIcon) : @".bundle";
-		else
-			fileType = isMainBundle ? (NSString*)kUTTypeApplication : (NSString*)kUTTypeBundle;
-		icon = [[NSWorkspace sharedWorkspace] iconForFileType:fileType];
-	}
-	return icon;
-}
-
-- (BOOL)isRunningOnReadOnlyVolume
-{	
-	struct statfs statfs_info;
-	statfs([[bundle bundlePath] fileSystemRepresentation], &statfs_info);
-	return (statfs_info.f_flags & MNT_RDONLY);
-}
-
-- (BOOL)isBackgroundApplication
-{
-	ProcessSerialNumber PSN;
-	GetCurrentProcess(&PSN);
-	CFDictionaryRef processInfo = ProcessInformationCopyDictionary(&PSN, kProcessDictionaryIncludeAllInformationMask);
-	BOOL isElement = [[(NSDictionary *)processInfo objectForKey:@"LSUIElement"] boolValue];
-	if (processInfo)
-		CFRelease(processInfo);
-	return isElement;
-}
-
-- (NSString *)publicDSAKey
-{
-	// Maybe the key is just a string in the Info.plist.
-	NSString *key = [bundle objectForInfoDictionaryKey:SUPublicDSAKeyKey];
-	if (key) { return key; }
-	
-	// More likely, we've got a reference to a Resources file by filename:
-	NSString *keyFilename = [self objectForInfoDictionaryKey:SUPublicDSAKeyFileKey];
-	if (!keyFilename) { return nil; }
-	NSError *ignoreErr = nil;
-	return [NSString stringWithContentsOfFile:[bundle pathForResource:keyFilename ofType:nil] encoding:NSASCIIStringEncoding error: &ignoreErr];
 }
 
 - (NSArray *)systemProfile
