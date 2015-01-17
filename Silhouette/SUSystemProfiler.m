@@ -55,7 +55,7 @@
 			case CPU_TYPE_POWERPC:	visibleCPUType = @"PowerPC";	break;
 			default:				visibleCPUType = @"Unknown";	break;
 		}
-		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cputype",@"CPU Type", [NSNumber numberWithUnsignedInteger:value], visibleCPUType,nil] forKeys:profileDictKeys]];
+		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cputype",@"CPU Type", [NSNumber numberWithUnsignedLongLong:value], visibleCPUType,nil] forKeys:profileDictKeys]];
 	}
 	error = sysctlbyname("hw.cpu64bit_capable", &value, &length, NULL, 0);
 	if(error != 0)
@@ -86,7 +86,7 @@
 		} else {
 			visibleCPUSubType = @"Other";
 		}
-		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cpusubtype",@"CPU Subtype", [NSNumber numberWithUnsignedInteger:value], visibleCPUSubType,nil] forKeys:profileDictKeys]];
+		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cpusubtype",@"CPU Subtype", [NSNumber numberWithUnsignedLongLong:value], visibleCPUSubType,nil] forKeys:profileDictKeys]];
 	}
 #if TARGET_OS_IPHONE
 	error = sysctlbyname("hw.machine", NULL, &length, NULL, 0);
@@ -115,7 +115,7 @@
 	// Number of CPUs
 	error = sysctlbyname("hw.ncpu", &value, &length, NULL, 0);
 	if (error == 0)
-		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"ncpu",@"Number of CPUs", [NSNumber numberWithUnsignedInteger:value], [NSNumber numberWithUnsignedInteger:value],nil] forKeys:profileDictKeys]];
+		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"ncpu",@"Number of CPUs", [NSNumber numberWithUnsignedLongLong:value], [NSNumber numberWithUnsignedLongLong:value],nil] forKeys:profileDictKeys]];
 	
 	// User preferred language
 	NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
@@ -147,8 +147,8 @@
     error = sysctlbyname("hw.memsize", &value, &length, NULL, 0);
     if (error == 0) {
         // Example: 24GB is returned as 25769803776
-        NSUInteger memSizeMB = value / (1024*1024);
-		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"ramMB",@"Memory (MB)", [NSNumber numberWithUnsignedInteger:memSizeMB], [NSNumber numberWithUnsignedInteger:memSizeMB],nil] forKeys:profileDictKeys]];
+        unsigned long long memSizeMB = value / (1024*1024);
+		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"ramMB",@"Memory (MB)", [NSNumber numberWithUnsignedLongLong:memSizeMB], [NSNumber numberWithUnsignedLongLong:memSizeMB],nil] forKeys:profileDictKeys]];
     }
 	
 	return profileArray;
