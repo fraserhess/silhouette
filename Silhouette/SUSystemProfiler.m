@@ -11,6 +11,7 @@
 
 #import "SUHost.h"
 #import <sys/sysctl.h>
+#import <mach/machine.h>
 
 @implementation SUSystemProfiler
 + (SUSystemProfiler *)sharedSystemProfiler
@@ -87,11 +88,19 @@
 		}
 		[profileArray addObject:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"cpusubtype",@"CPU Subtype", [NSNumber numberWithUnsignedInteger:value], visibleCPUSubType,nil] forKeys:profileDictKeys]];
 	}
+#if TARGET_OS_IPHONE
+	error = sysctlbyname("hw.machine", NULL, &length, NULL, 0);
+#else
 	error = sysctlbyname("hw.model", NULL, &length, NULL, 0);
+#endif
 	if (error == 0) {
 		char *cpuModel = (char *)malloc(sizeof(char) * length);
 		if (cpuModel != NULL) {
+#if TARGET_OS_IPHONE
+			error = sysctlbyname("hw.machine", cpuModel, &length, NULL, 0);
+#else
 			error = sysctlbyname("hw.model", cpuModel, &length, NULL, 0);
+#endif
 			if (error == 0) {
 				NSString *rawModelName = [NSString stringWithUTF8String:cpuModel];
 				NSString *visibleModelName = [modelTranslation objectForKey:rawModelName];

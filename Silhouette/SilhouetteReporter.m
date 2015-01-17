@@ -143,8 +143,13 @@
 {
 	if (customUserAgentString)
 		return customUserAgentString;
-	
+
+#if TARGET_OS_IPHONE
+	// TODO: Get Silhouette version into iOS static library
+	NSString *version = @"unknown";
+#else
 	NSString *version = [SILHOUETTE_BUNDLE objectForInfoDictionaryKey:@"CFBundleVersion"];
+#endif
 	NSString *userAgent = [NSString stringWithFormat:@"%@/%@ Silhouette/%@", [host name], [host displayVersion], version ? version : @"?"];
 	NSData *cleanedAgent = [userAgent dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
 	return [[[NSString alloc] initWithData:cleanedAgent encoding:NSASCIIStringEncoding] autorelease];

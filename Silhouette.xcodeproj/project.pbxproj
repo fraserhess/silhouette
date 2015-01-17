@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C219B9B1A6A038D00D46BD8 /* SUSystemProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55F1810C96E00B286AA /* SUSystemProfiler.m */; };
+		4C219B9C1A6A051400D46BD8 /* SilhouetteReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55A1810C95500B286AA /* SilhouetteReporter.m */; };
+		4C219B9D1A6A067400D46BD8 /* SUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5631810C96E00B286AA /* SUConstants.m */; };
+		4C219B9E1A6A067600D46BD8 /* SUHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5611810C96E00B286AA /* SUHost.m */; };
+		4C219BA81A6A072B00D46BD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C219BA71A6A072B00D46BD8 /* main.m */; };
+		4C219BAB1A6A072B00D46BD8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C219BAA1A6A072B00D46BD8 /* AppDelegate.m */; };
+		4C219BAE1A6A072B00D46BD8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C219BAD1A6A072B00D46BD8 /* ViewController.m */; };
+		4C219BB11A6A072B00D46BD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C219BAF1A6A072B00D46BD8 /* Main.storyboard */; };
+		4C219BB31A6A072B00D46BD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C219BB21A6A072B00D46BD8 /* Images.xcassets */; };
+		4C219BB61A6A072B00D46BD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C219BB41A6A072B00D46BD8 /* LaunchScreen.xib */; };
+		4C219BCB1A6A07E300D46BD8 /* libSilhouetteTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C219B841A6A037600D46BD8 /* libSilhouetteTouch.a */; };
+		4C219BCC1A6A082100D46BD8 /* SULog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5651810C96E00B286AA /* SULog.m */; };
 		4C31C048181C1B2C0052FA84 /* SUHost.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5601810C96E00B286AA /* SUHost.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C4AB5A4181227EE00B286AA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AB5481810C8B900B286AA /* Cocoa.framework */; };
 		4C4AB5AA181227EE00B286AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C4AB5A8181227EE00B286AA /* InfoPlist.strings */; };
@@ -28,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4C219BC91A6A07B800D46BD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C4AB53D1810C8B900B286AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C219B831A6A037600D46BD8;
+			remoteInfo = SilhouetteTouch;
+		};
 		4C4AB5D418122FD400B286AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C4AB53D1810C8B900B286AA /* Project object */;
@@ -38,6 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		4C219B821A6A037600D46BD8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C4AB5D71812310500B286AA /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,6 +80,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C219B841A6A037600D46BD8 /* libSilhouetteTouch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSilhouetteTouch.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C219BA31A6A072B00D46BD8 /* SilhouetteTouchDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilhouetteTouchDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C219BA61A6A072B00D46BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C219BA71A6A072B00D46BD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C219BA91A6A072B00D46BD8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C219BAA1A6A072B00D46BD8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C219BAC1A6A072B00D46BD8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C219BAD1A6A072B00D46BD8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C219BB01A6A072B00D46BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C219BB21A6A072B00D46BD8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4C219BB51A6A072B00D46BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4C219BCD1A6B011400D46BD8 /* SilhouetteTouch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SilhouetteTouch-Prefix.pch"; sourceTree = "<group>"; };
 		4C31C0441818C53F0052FA84 /* SilhouetteDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SilhouetteDemo.entitlements; sourceTree = "<group>"; };
 		4C4AB5481810C8B900B286AA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4C4AB54B1810C8B900B286AA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -83,6 +123,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4C219B811A6A037600D46BD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C219BA01A6A072B00D46BD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C219BCB1A6A07E300D46BD8 /* libSilhouetteTouch.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C4AB59F181227EE00B286AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,11 +158,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C219B851A6A037600D46BD8 /* SilhouetteTouch */ = {
+			isa = PBXGroup;
+			children = (
+				4C219BCD1A6B011400D46BD8 /* SilhouetteTouch-Prefix.pch */,
+			);
+			path = SilhouetteTouch;
+			sourceTree = "<group>";
+		};
+		4C219BA41A6A072B00D46BD8 /* SilhouetteTouchDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4C219BA91A6A072B00D46BD8 /* AppDelegate.h */,
+				4C219BAA1A6A072B00D46BD8 /* AppDelegate.m */,
+				4C219BAC1A6A072B00D46BD8 /* ViewController.h */,
+				4C219BAD1A6A072B00D46BD8 /* ViewController.m */,
+				4C219BAF1A6A072B00D46BD8 /* Main.storyboard */,
+				4C219BB21A6A072B00D46BD8 /* Images.xcassets */,
+				4C219BB41A6A072B00D46BD8 /* LaunchScreen.xib */,
+				4C219BA51A6A072B00D46BD8 /* Supporting Files */,
+			);
+			path = SilhouetteTouchDemo;
+			sourceTree = "<group>";
+		};
+		4C219BA51A6A072B00D46BD8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C219BA61A6A072B00D46BD8 /* Info.plist */,
+				4C219BA71A6A072B00D46BD8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4C4AB53C1810C8B900B286AA = {
 			isa = PBXGroup;
 			children = (
 				4C4AB54E1810C8B900B286AA /* Silhouette */,
 				4C4AB5BF18122FC600B286AA /* SilhouetteDemo */,
+				4C219B851A6A037600D46BD8 /* SilhouetteTouch */,
+				4C219BA41A6A072B00D46BD8 /* SilhouetteTouchDemo */,
 				4C4AB5471810C8B900B286AA /* Frameworks */,
 				4C4AB5461810C8B900B286AA /* Products */,
 			);
@@ -118,6 +207,8 @@
 			children = (
 				4C4AB5A3181227EE00B286AA /* Silhouette.framework */,
 				4C4AB5BD18122FC500B286AA /* SilhouetteDemo.app */,
+				4C219B841A6A037600D46BD8 /* libSilhouetteTouch.a */,
+				4C219BA31A6A072B00D46BD8 /* SilhouetteTouchDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +308,41 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4C219B831A6A037600D46BD8 /* SilhouetteTouch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C219B991A6A037600D46BD8 /* Build configuration list for PBXNativeTarget "SilhouetteTouch" */;
+			buildPhases = (
+				4C219B801A6A037600D46BD8 /* Sources */,
+				4C219B811A6A037600D46BD8 /* Frameworks */,
+				4C219B821A6A037600D46BD8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SilhouetteTouch;
+			productName = SilhouetteTouch;
+			productReference = 4C219B841A6A037600D46BD8 /* libSilhouetteTouch.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4C219BA21A6A072B00D46BD8 /* SilhouetteTouchDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C219BC31A6A072C00D46BD8 /* Build configuration list for PBXNativeTarget "SilhouetteTouchDemo" */;
+			buildPhases = (
+				4C219B9F1A6A072B00D46BD8 /* Sources */,
+				4C219BA01A6A072B00D46BD8 /* Frameworks */,
+				4C219BA11A6A072B00D46BD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C219BCA1A6A07B800D46BD8 /* PBXTargetDependency */,
+			);
+			name = SilhouetteTouchDemo;
+			productName = SilhouetteTouchDemo;
+			productReference = 4C219BA31A6A072B00D46BD8 /* SilhouetteTouchDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		4C4AB5A2181227EE00B286AA /* Silhouette */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C4AB5AF181227EE00B286AA /* Build configuration list for PBXNativeTarget "Silhouette" */;
@@ -262,6 +388,14 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Glencode LLC";
+				TargetAttributes = {
+					4C219B831A6A037600D46BD8 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					4C219BA21A6A072B00D46BD8 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
 			};
 			buildConfigurationList = 4C4AB5401810C8B900B286AA /* Build configuration list for PBXProject "Silhouette" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -269,6 +403,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4C4AB53C1810C8B900B286AA;
 			productRefGroup = 4C4AB5461810C8B900B286AA /* Products */;
@@ -277,11 +412,23 @@
 			targets = (
 				4C4AB5A2181227EE00B286AA /* Silhouette */,
 				4C4AB5BC18122FC500B286AA /* SilhouetteDemo */,
+				4C219B831A6A037600D46BD8 /* SilhouetteTouch */,
+				4C219BA21A6A072B00D46BD8 /* SilhouetteTouchDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4C219BA11A6A072B00D46BD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C219BB11A6A072B00D46BD8 /* Main.storyboard in Resources */,
+				4C219BB61A6A072B00D46BD8 /* LaunchScreen.xib in Resources */,
+				4C219BB31A6A072B00D46BD8 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C4AB5A1181227EE00B286AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,6 +450,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4C219B801A6A037600D46BD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C219B9B1A6A038D00D46BD8 /* SUSystemProfiler.m in Sources */,
+				4C219B9C1A6A051400D46BD8 /* SilhouetteReporter.m in Sources */,
+				4C219B9E1A6A067600D46BD8 /* SUHost.m in Sources */,
+				4C219BCC1A6A082100D46BD8 /* SULog.m in Sources */,
+				4C219B9D1A6A067400D46BD8 /* SUConstants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C219B9F1A6A072B00D46BD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C219BAE1A6A072B00D46BD8 /* ViewController.m in Sources */,
+				4C219BAB1A6A072B00D46BD8 /* AppDelegate.m in Sources */,
+				4C219BA81A6A072B00D46BD8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C4AB59E181227EE00B286AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +496,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4C219BCA1A6A07B800D46BD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C219B831A6A037600D46BD8 /* SilhouetteTouch */;
+			targetProxy = 4C219BC91A6A07B800D46BD8 /* PBXContainerItemProxy */;
+		};
 		4C4AB5D518122FD400B286AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4C4AB5A2181227EE00B286AA /* Silhouette */;
@@ -335,6 +509,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4C219BAF1A6A072B00D46BD8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C219BB01A6A072B00D46BD8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C219BB41A6A072B00D46BD8 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C219BB51A6A072B00D46BD8 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
 		4C4AB5A8181227EE00B286AA /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,6 +560,118 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4C219B951A6A037600D46BD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "SilhouetteTouch/SilhouetteTouch-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C219B961A6A037600D46BD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "SilhouetteTouch/SilhouetteTouch-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C219BC41A6A072C00D46BD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SilhouetteTouchDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C219BC51A6A072C00D46BD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SilhouetteTouchDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		4C4AB5541810C8B900B286AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -498,6 +800,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4C219B991A6A037600D46BD8 /* Build configuration list for PBXNativeTarget "SilhouetteTouch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C219B951A6A037600D46BD8 /* Debug */,
+				4C219B961A6A037600D46BD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4C219BC31A6A072C00D46BD8 /* Build configuration list for PBXNativeTarget "SilhouetteTouchDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C219BC41A6A072C00D46BD8 /* Debug */,
+				4C219BC51A6A072C00D46BD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4C4AB5401810C8B900B286AA /* Build configuration list for PBXProject "Silhouette" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
