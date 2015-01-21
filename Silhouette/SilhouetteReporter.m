@@ -7,6 +7,7 @@
 //
 
 #import "SilhouetteReporter.h"
+#import "SUHost.h"
 #import "SUConstants.h"
 #if TARGET_OS_IPHONE
 #import "GitVersion.h"
@@ -15,7 +16,13 @@
 
 #define SIL_DELAY 300
 
-@implementation SilhouetteReporter
+@implementation SilhouetteReporter {
+	NSTimer *checkTimer;
+	NSString *customUserAgentString;
+	SUHost *host;
+	NSOperationQueue *requestQueue;
+	IBOutlet id delegate;
+}
 
 + (SilhouetteReporter *)sharedReporter {
 	static SilhouetteReporter *sharedInstance = nil;
@@ -192,6 +199,11 @@
 	while ( (currentProfileInfo = [profileInfoEnumerator nextObject]) )
 		[parameterStrings addObject:[NSString stringWithFormat:@"%@=%@", [[[currentProfileInfo objectForKey:@"key"] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[[currentProfileInfo objectForKey:@"value"] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 
+#if TARGET_OS_IPHONE
+	[parameterStrings addObject:@"os=iOS"];
+#else
+	[parameterStrings addObject:@"os=OSX"];
+#endif
 	NSString *separatorCharacter = @"?";
 	if ([baseFeedURL query]) {
 		separatorCharacter = @"&"; // In case the URL is already http://foo.org/baz.xml?bat=4

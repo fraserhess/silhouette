@@ -33,6 +33,7 @@
 		4C219BB61A6A072B00D46BD8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C219BB41A6A072B00D46BD8 /* LaunchScreen.xib */; };
 		4C219BCB1A6A07E300D46BD8 /* libSilhouetteTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C219B841A6A037600D46BD8 /* libSilhouetteTouch.a */; };
 		4C219BCC1A6A082100D46BD8 /* SULog.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB5651810C96E00B286AA /* SULog.m */; };
+		4C219BD71A6F3FE800D46BD8 /* SilhouetteReporter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C4AB5591810C95500B286AA /* SilhouetteReporter.h */; };
 		4C31C048181C1B2C0052FA84 /* SUHost.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C4AB5601810C96E00B286AA /* SUHost.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C4AB5A4181227EE00B286AA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AB5481810C8B900B286AA /* Cocoa.framework */; };
 		4C4AB5AA181227EE00B286AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C4AB5A8181227EE00B286AA /* InfoPlist.strings */; };
@@ -88,9 +89,10 @@
 		4C219B821A6A037600D46BD8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
+			dstPath = headers;
 			dstSubfolderSpec = 16;
 			files = (
+				4C219BD71A6F3FE800D46BD8 /* SilhouetteReporter.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

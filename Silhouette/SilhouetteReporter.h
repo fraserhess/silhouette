@@ -7,16 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SUHost.h"
 
-@interface SilhouetteReporter : NSObject {
-@private
-	NSTimer *checkTimer;
-	NSString *customUserAgentString;
-	SUHost *host;
-	NSOperationQueue *requestQueue;
-	IBOutlet id delegate;
-}
+@interface SilhouetteReporter : NSObject
 
 + (SilhouetteReporter *)sharedReporter;
 
