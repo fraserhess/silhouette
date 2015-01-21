@@ -9,6 +9,7 @@
 #import "SilhouetteReporter.h"
 #import "SUConstants.h"
 #if TARGET_OS_IPHONE
+#import "GitVersion.h"
 #import <UIKit/UIDevice.h>
 #endif
 
@@ -158,8 +159,7 @@
 		return customUserAgentString;
 
 #if TARGET_OS_IPHONE
-	// TODO: Get Silhouette version into iOS static library
-	NSString *version = @"unknown";
+	NSString *version = GIT_VERSION;
 #else
 	NSString *version = [SILHOUETTE_BUNDLE objectForInfoDictionaryKey:@"CFBundleVersion"];
 #endif

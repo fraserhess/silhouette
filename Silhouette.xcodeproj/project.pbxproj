@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		4C219BCE1A6F356300D46BD8 /* GenGitVersion */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4C219BCF1A6F356300D46BD8 /* Build configuration list for PBXAggregateTarget "GenGitVersion" */;
+			buildPhases = (
+				4C219BD21A6F356800D46BD8 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = GenGitVersion;
+			productName = GenGitVersion;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		4C219B9B1A6A038D00D46BD8 /* SUSystemProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55F1810C96E00B286AA /* SUSystemProfiler.m */; };
 		4C219B9C1A6A051400D46BD8 /* SilhouetteReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AB55A1810C95500B286AA /* SilhouetteReporter.m */; };
@@ -46,6 +60,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4C219B831A6A037600D46BD8;
 			remoteInfo = SilhouetteTouch;
+		};
+		4C219BD31A6F35CF00D46BD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C4AB53D1810C8B900B286AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C219BCE1A6F356300D46BD8;
+			remoteInfo = GenGitVersion;
+		};
+		4C219BD51A6F397100D46BD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C4AB53D1810C8B900B286AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C219BCE1A6F356300D46BD8;
+			remoteInfo = GenGitVersion;
 		};
 		4C4AB5D418122FD400B286AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -319,6 +347,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4C219BD41A6F35CF00D46BD8 /* PBXTargetDependency */,
 			);
 			name = SilhouetteTouch;
 			productName = SilhouetteTouch;
@@ -355,6 +384,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4C219BD61A6F397100D46BD8 /* PBXTargetDependency */,
 			);
 			name = Silhouette;
 			productName = Silhouette;
@@ -395,6 +425,9 @@
 					4C219BA21A6A072B00D46BD8 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					4C219BCE1A6F356300D46BD8 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = 4C4AB5401810C8B900B286AA /* Build configuration list for PBXProject "Silhouette" */;
@@ -414,6 +447,7 @@
 				4C4AB5BC18122FC500B286AA /* SilhouetteDemo */,
 				4C219B831A6A037600D46BD8 /* SilhouetteTouch */,
 				4C219BA21A6A072B00D46BD8 /* SilhouetteTouchDemo */,
+				4C219BCE1A6F356300D46BD8 /* GenGitVersion */,
 			);
 		};
 /* End PBXProject section */
@@ -448,6 +482,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C219BD21A6F356800D46BD8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=/usr/bin/git\nversion=`$git describe --dirty`\necho \"#define GIT_VERSION $version\" > InfoPlist.h\necho \"#define GIT_VERSION @\\\"$version\\\"\" > Silhouette/GitVersion.h";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C219B801A6A037600D46BD8 /* Sources */ = {
@@ -500,6 +550,16 @@
 			isa = PBXTargetDependency;
 			target = 4C219B831A6A037600D46BD8 /* SilhouetteTouch */;
 			targetProxy = 4C219BC91A6A07B800D46BD8 /* PBXContainerItemProxy */;
+		};
+		4C219BD41A6F35CF00D46BD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C219BCE1A6F356300D46BD8 /* GenGitVersion */;
+			targetProxy = 4C219BD31A6F35CF00D46BD8 /* PBXContainerItemProxy */;
+		};
+		4C219BD61A6F397100D46BD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C219BCE1A6F356300D46BD8 /* GenGitVersion */;
+			targetProxy = 4C219BD51A6F397100D46BD8 /* PBXContainerItemProxy */;
 		};
 		4C4AB5D518122FD400B286AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -672,6 +732,20 @@
 			};
 			name = Release;
 		};
+		4C219BD01A6F356300D46BD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C219BD11A6F356300D46BD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		4C4AB5541810C8B900B286AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -742,6 +816,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Silhouette/Silhouette-Prefix.pch";
 				INFOPLIST_FILE = "Silhouette/Silhouette-Info.plist";
+				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -760,6 +836,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Silhouette/Silhouette-Prefix.pch";
 				INFOPLIST_FILE = "Silhouette/Silhouette-Info.plist";
+				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -813,6 +891,14 @@
 			buildConfigurations = (
 				4C219BC41A6A072C00D46BD8 /* Debug */,
 				4C219BC51A6A072C00D46BD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4C219BCF1A6F356300D46BD8 /* Build configuration list for PBXAggregateTarget "GenGitVersion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C219BD01A6F356300D46BD8 /* Debug */,
+				4C219BD11A6F356300D46BD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
