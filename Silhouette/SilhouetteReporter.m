@@ -200,9 +200,9 @@
 		[parameterStrings addObject:[NSString stringWithFormat:@"%@=%@", [[[currentProfileInfo objectForKey:@"key"] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[[currentProfileInfo objectForKey:@"value"] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
 
 #if TARGET_OS_IPHONE
-	[parameterStrings addObject:@"os=iOS"];
+	[parameterStrings addObject:@"os=ios"];
 #else
-	[parameterStrings addObject:@"os=OSX"];
+	[parameterStrings addObject:@"os=osx"];
 #endif
 	NSString *separatorCharacter = @"?";
 	if ([baseFeedURL query]) {
