@@ -32,6 +32,7 @@
 	// Must detect the simulator at runtime, not compile time, as Silhouette is a library
 	if ([[[[UIDevice currentDevice] model] lowercaseString] containsString:@"simulator"]) {
 		NSLog(@"Silhouette does not operate in the iOS Simulator");
+		[self release];
 		return nil;
 	}
 #endif
