@@ -887,6 +887,7 @@
 				4C219B961A6A037600D46BD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C219BC31A6A072C00D46BD8 /* Build configuration list for PBXNativeTarget "SilhouetteTouchDemo" */ = {
 			isa = XCConfigurationList;
@@ -895,6 +896,7 @@
 				4C219BC51A6A072C00D46BD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C219BCF1A6F356300D46BD8 /* Build configuration list for PBXAggregateTarget "GenGitVersion" */ = {
 			isa = XCConfigurationList;
@@ -903,6 +905,7 @@
 				4C219BD11A6F356300D46BD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C4AB5401810C8B900B286AA /* Build configuration list for PBXProject "Silhouette" */ = {
 			isa = XCConfigurationList;
